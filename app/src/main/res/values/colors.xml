@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+        <!-- Màu Nền Chính -->
+    <color name="main_back">#070b16</color>
+    <color name="main_back_alpha">#b3070b16</color>
+    <color name="main_back_alpha_54">#8a070b16</color>
+    <color name="main_back_alpha_73">#ba070b16</color>
+    <color name="main_back_alpha_80">#cc070b16</color>
+    <color name="main_back_lite">#141722</color>
+    <color name="main_back_lite_alpha">#b3141722</color>
+    <color name="main_black">#000</color>
+    <color name="main_black_alpha">#b3000000</color>
+    <color name="main_blue">#070b16</color>
+    <color name="main_blue_alpha_87">#de070b16</color>
+    <color name="main_feed_section">#0d111d</color>
+    <color name="main_gray">#141722</color>
+    <color name="main_gray_alpha">#b32d3445</color>
+    <color name="main_red">#f44336</color>
+    <color name="main_red_alpha">#b3f44336</color>
+    <color name="main_white">#fff</color>
+    <color name="main_white_32">#52ffffff</color>
+    <color name="main_white_alpha">#b3ffffff</color>
+    <color name="main_yellow">#fcb914</color>
+    <color name="main_yellow_alpha">#b3fcb914</color>
+
+    <!-- Màu Placeholder cho ảnh khi đang tải -->
+        <color name="img_placeholder">#181D2A</color>
+
+    <color name="primary_dark_material_dark">@android:color/black</color>
+    <color name="primary_dark_material_light">@color/material_grey_600</color>
+    <color name="primary_material_dark">@color/material_grey_900</color>
+    <color name="primary_material_light">@color/material_grey_100</color>
+    <color name="primary_text_default_material_dark">#ffffffff</color>
+    <color name="primary_text_default_material_light">#de000000</color>
+    <color name="primary_text_disabled_material_dark">#4dffffff</color>
+    <color name="primary_text_disabled_material_light">#39000000</color>
+    <color name="ripple_color_button_pressed">#52ffffff</color>
+    <color name="ripple_material_dark">#33ffffff</color>
+    <color name="ripple_material_light">#1f000000</color>
+    <color name="secondary_text_default_material_dark">#b3ffffff</color>
+    <color name="secondary_text_default_material_light">#8a000000</color>
+    <color name="secondary_text_disabled_material_dark">#36ffffff</color>
+    <color name="secondary_text_disabled_material_light">#24000000</color>
+    <color name="side_menu_divider">#252932</color>
+    <color name="welcome_screen_divider_line">#20242e</color>
+</resources>

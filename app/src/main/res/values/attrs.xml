@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Thuộc tính cho EmptyView -->
+    <declare-styleable name="EmptyView">
+        <attr name="e_image" format="reference" />
+        <attr name="e_text" format="string" />
+    </declare-styleable>
+
+    <!-- Thuộc tính cho ErrorView -->
+    <declare-styleable name="ErrorView">
+        <attr name="ev_icon" format="enum">
+            <enum name="linear" value="0" />
+            <enum name="fill" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <!-- Thuộc tính giả lập cho ShadowLayout -->
+    <declare-styleable name="ShadowLayout">
+        <attr name="sl_cornerRadius" format="dimension"/>
+        <attr name="sl_shadowRadius" format="dimension"/>
+        <attr name="sl_dx" format="dimension"/>
+        <attr name="sl_dy" format="dimension"/>
+        <attr name="sl_shadowColor" format="color"/>
+    </declare-styleable>
+<!--    Side menu item -->
+    <declare-styleable name="SideMenuItem">
+        <attr name="image" format="reference" />
+        <attr name="text" format="string" />
+    </declare-styleable>
+</resources>

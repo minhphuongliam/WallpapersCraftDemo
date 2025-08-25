@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/NotFound">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_gravity="center"
+        android:id="@+id/empty_image"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/navigation_item_history"
+        android:alpha="0.37"
+        app:srcCompat="@drawable/ic_history"
+        style="@style/NotFound.Image"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_gravity="center"
+        android:id="@+id/empty_text"
+        style="@style/NotFound.Text"/>
+</LinearLayout>

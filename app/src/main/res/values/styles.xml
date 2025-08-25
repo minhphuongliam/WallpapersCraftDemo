@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="IndeterminateProgressBar">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">42dp</item>
+        <item name="android:layout_height">42dp</item>
+    </style>
+
+    <style name="IndeterminateProgressBarSmall">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+    </style>
+    <style name="TabTextAppearance" parent="">
+        <item name="android:textColor">@color/main_white</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="NotFound" parent="">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/main_back</item>
+        <item name="android:paddingStart">@dimen/layout_horizontal_margin</item>
+        <item name="android:paddingEnd">@dimen/layout_horizontal_margin</item>
+    </style>
+    <style name="NotFound.Image" parent="@style/NotFound">
+        <item name="android:layout_width">@dimen/not_found_icon_size</item>
+        <item name="android:layout_height">@dimen/not_found_icon_size</item>
+    </style>
+    <style name="NotFound.Text" parent="@style/NotFound">
+        <item name="android:textSize">@dimen/text_size_x_large</item>
+        <item name="android:textColor">#de7c849a</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/spacing_large"
+    android:paddingTop="@dimen/spacing_x_normal"
+    android:paddingRight="@dimen/spacing_large"
+    android:paddingBottom="@dimen/spacing_x_normal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textSize="@dimen/text_size_smaller"
+        android:textColor="@color/main_white_alpha"
+        android:id="@+id/sort_button_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        app:srcCompat="@drawable/ic_triangle"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_gravity="center_vertical"
+        android:id="@+id/sort_is_new"
+        android:visibility="invisible"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:src="@drawable/yellow_circle"
+        android:layout_marginStart="4dp"/>
+    <TextView
+        android:textSize="@dimen/text_size_smaller"
+        android:textColor="@color/main_yellow"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/sort_new_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:layout_marginStart="6dp"/>
+</LinearLayout>

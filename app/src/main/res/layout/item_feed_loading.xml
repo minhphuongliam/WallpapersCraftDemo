@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/feed_progress_bar">
+    <com.demo.wallpaperscraft.ui.views.ProgressWheel
+        android:id="@+id/progress_bar_feed"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        style="@style/IndeterminateProgressBar"/>
+</FrameLayout>

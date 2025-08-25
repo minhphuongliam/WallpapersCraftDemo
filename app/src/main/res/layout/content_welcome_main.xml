@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:isScrollContainer="true">
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Space
+            android:id="@+id/space_logo"
+            android:layout_width="match_parent"
+            android:layout_height="78dp"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_logo"
+            android:layout_width="112dp"
+            android:layout_height="130dp"
+            android:layout_marginBottom="30dp"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/ic_logo"/>
+        <View
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/separator"
+            android:background="@color/welcome_screen_divider_line"
+            android:layout_width="@dimen/welcome_screen_separator_line_width"
+            android:layout_height="1dp"
+            android:alpha="0"/>
+        <FrameLayout
+            android:layout_gravity="bottom"
+            android:id="@+id/container_welcome"
+            android:fitsSystemWindows="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="32dp"/>
+    </LinearLayout>
+</ScrollView>

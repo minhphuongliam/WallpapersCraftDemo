@@ -1,0 +1,32 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+# =========================================
+# Build artifacts and outputs
+# =========================================
+/build
+/captures
+.externalNativeBuild
+.cxx
+
+# =========================================
+# Google Services & API Keys (RẤT QUAN TRỌNG)
+# =========================================
+# File chứa API key và các thông tin nhạy cảm của Firebase
+google-services.json
+
+# File chứa key của service account để script Python tương tác với Firebase/Google Cloud
+# (Bất kỳ file .json nào chứa key)
+*.json

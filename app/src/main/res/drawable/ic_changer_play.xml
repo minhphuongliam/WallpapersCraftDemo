@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt"
+    android:height="34dp"
+    android:width="34dp"
+    android:viewportWidth="34"
+    android:viewportHeight="34">
+    <path
+        android:fillColor="#fcb914"
+        android:pathData="M33.75,17C33.75,26.2508 26.2508,33.75 17,33.75C7.7492,33.75 0.25,26.2508 0.25,17C0.25,7.7492 7.7492,0.25 17,0.25C26.2508,0.25 33.75,7.7492 33.75,17Z"/>
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M33.75,17C33.75,26.2508 26.2508,33.75 17,33.75C7.7492,33.75 0.25,26.2508 0.25,17C0.25,7.7492 7.7492,0.25 17,0.25C26.2508,0.25 33.75,7.7492 33.75,17Z"
+        android:strokeColor="@drawable/_ic_changer_play__0_res_0x7f08001e"
+        android:strokeWidth="0.5"/>
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M33.75,17C33.75,26.2508 26.2508,33.75 17,33.75C7.7492,33.75 0.25,26.2508 0.25,17C0.25,7.7492 7.7492,0.25 17,0.25C26.2508,0.25 33.75,7.7492 33.75,17Z"
+        android:strokeColor="@drawable/_ic_changer_play__1_res_0x7f08001f"
+        android:strokeWidth="0.5"/>
+    <path
+        android:fillColor="#181d2a"
+        android:pathData="M13,10V24L24,17L13,10Z"/>
+</vector>

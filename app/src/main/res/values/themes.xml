@@ -1,0 +1,90 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.WallpapersCraft" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="Base.Theme.AppCompat.Light.DarkActionBar" parent="@style/Base.Theme.AppCompat.Light">
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="actionBarWidgetTheme">@null</item>
+        <item name="actionModeTheme">?attr/actionBarTheme</item>
+        <item name="colorPrimary">@color/primary_material_dark</item>
+        <item name="colorPrimaryDark">@color/primary_dark_material_dark</item>
+        <item name="listChoiceBackgroundIndicator">@drawable/abc_list_selector_holo_dark</item>
+    </style>
+    <style name="CraftTheme" parent="@style/Theme.MaterialComponents">
+        <item name="android:navigationBarColor">@color/main_back</item>
+    </style>
+    <style name="CraftTheme.AlertDialog.NegativeButtonStyle" parent="@style/Theme.MaterialComponents.Dialog.Alert">
+        <item name="android:textColor">@color/main_yellow</item>
+        <item name="android:colorControlHighlight">@color/main_white_32</item>
+    </style>
+    <style name="CraftTheme.AlertDialog.PositiveButtonStyle" parent="@style/Theme.MaterialComponents.Dialog.Alert">
+        <item name="android:textColor">@color/main_yellow</item>
+        <item name="android:colorControlHighlight">@color/main_white_32</item>
+    </style>
+    <style name="CraftTheme.AlertDialog.Theme" parent="@style/Theme.MaterialComponents.Dialog.Alert">
+        <item name="android:colorBackground">@color/main_back_lite</item>
+        <item name="android:textColorPrimary">@color/main_white</item>
+        <item name="android:textColor">@color/main_white</item>
+        <item name="android:textColorLink">@color/main_yellow</item>
+        <item name="buttonBarNegativeButtonStyle">@style/CraftTheme.AlertDialog.NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/CraftTheme.AlertDialog.PositiveButtonStyle</item>
+        <item name="colorAccent">@color/main_yellow</item>
+        <item name="colorPrimary">@color/main_back_lite</item>
+        <item name="dialogPreferredPadding">@dimen/spacing_x_large</item>
+    </style>
+    <style name="CraftTheme.Button" parent="@style/CraftTheme.Main">
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:backgroundTint">@color/main_yellow</item>
+    </style>
+    <style name="CraftTheme.Main" parent="@style/CraftTheme">
+        <item name="android:colorBackground">@color/main_back</item>
+        <item name="android:textColorPrimary">@color/main_white</item>
+        <item name="android:windowBackground">@color/main_back</item>
+        <item name="android:textColorHighlight">@android:color/transparent</item>
+        <item name="android:textColorLink">@android:color/secondary_text_dark</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:colorControlHighlight">@color/main_white_32</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="alertDialogTheme">@style/CraftTheme.AlertDialog.Theme</item>
+        <item name="colorAccent">@color/main_yellow</item>
+        <item name="colorPrimary">@color/main_back</item>
+        <item name="colorPrimaryDark">@color/main_back</item>
+        <item name="tabIndicatorColor">@color/main_yellow</item>
+        <item name="tabSelectedTextColor">@color/main_white</item>
+        <item name="tabTextColor">@color/main_white_alpha</item>
+    </style>
+    <style name="CraftTheme.NoActionBar" parent="@style/CraftTheme">
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/main_back_alpha</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="CraftTheme.PreferenceScreen" parent="@style/CraftTheme">
+        <item name="android:dividerHeight">0dp</item>
+        <item name="android:listDivider">@null</item>
+        <item name="android:windowTranslucentStatus">false</item>
+    </style>
+    <style name="CraftTheme.PreferenceScreenNoActionBar" parent="@style/CraftTheme.NoActionBar">
+        <item name="android:dividerHeight">0dp</item>
+        <item name="android:listDivider">@null</item>
+        <item name="android:windowTranslucentStatus">false</item>
+    </style>
+    <style name="CraftTheme.WelcomeTheme" parent="@style/CraftTheme.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+
+</resources>

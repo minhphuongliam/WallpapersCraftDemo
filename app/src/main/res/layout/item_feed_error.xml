@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/text_size_large"
+        android:textColor="@color/main_white"
+        android:gravity="center"
+        android:id="@+id/error_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_x_large"
+        android:layout_marginBottom="@dimen/spacing_normal"
+        android:text="@string/error_retry_message"
+        android:alpha="0.87"
+        android:fontFamily="sans-serif"/>
+    <com.google.android.material.button.MaterialButton
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button"
+        android:textSize="@dimen/text_size_large"
+        android:textColor="@color/main_yellow"
+        android:id="@+id/button_retry"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/error_retry"
+        android:fontFamily="sans-serif-medium"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:rippleColor="@color/ripple_color_button_pressed"
+        style="@style/Widget.MaterialComponents.Button.TextButton"/>
+</LinearLayout>
