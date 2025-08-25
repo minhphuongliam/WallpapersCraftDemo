@@ -7,7 +7,7 @@ import com.demo.wallpaperscraft.databinding.FragmentHomeBinding
 import com.demo.wallpaperscraft.ui.base.BaseFragment
 import com.demo.wallpaperscraft.ui.main.MainActivity
 
-
+/** Fix lại Fragment này */
 class HomeFragment : BaseFragment<FragmentCategoryBinding>(FragmentCategoryBinding::inflate) {
 
     // Tạm thời chưa cần ViewModel
