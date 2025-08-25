@@ -5,6 +5,7 @@ import com.demo.wallpaperscraft.data.local.dao.FavoriteDao
 import com.demo.wallpaperscraft.data.local.dao.HistoryDao
 import com.demo.wallpaperscraft.data.local.entity.FavoriteEntity
 import com.demo.wallpaperscraft.data.model.Category
+import com.demo.wallpaperscraft.data.model.ImageVersion
 import com.demo.wallpaperscraft.data.model.Stats
 import com.demo.wallpaperscraft.data.model.Wallpaper
 import com.demo.wallpaperscraft.data.model.WallpaperUrls
@@ -55,33 +56,33 @@ class WallpaperRepositoryImpl @Inject constructor(
     )
     // TRIỂN KHAI CÁC HÀM MẠNG
     override suspend fun getCategories(): Result<List<Category>> {
-        delay(500) // Giả lập độ trễ mạng
+        delay(500)
         return Result.success(mockCategoryList)
     }
 
-    override suspend fun getWallpapers(categoryId: Int, sortBy: String, offset: Int, limit: Int): Result<List<Wallpaper>> {
+    // *** HÀM ĐÃ ĐƯỢC CẬP NHẬT HOÀN TOÀN ***
+    override suspend fun getWallpapers(
+        categoryId: Int,
+        sortBy: String,
+        types: List<String>,
+        offset: Int,
+        limit: Int
+    ): Result<List<Wallpaper>> {
         delay(1000)
 
-        // Tìm cover_url từ danh sách mock để làm ảnh đại diện cho toàn bộ list giả lập
         val representativeImageUrl = mockCategoryList.find { it.id == categoryId }?.coverUrl
             ?: "https://images.wallpaperscraft.com/image/single/136273_1920x1920.jpg" // Fallback
 
+        // Giả lập logic lọc theo 'types'
+        val isPremiumRequest = types.contains("premium")
+        val isFreeRequest = types.contains("free")
+
         val totalMockWallpapers = (0 until 100).map { index ->
-            val imageId = categoryId * 1000 + index
-            Wallpaper(
-                id = imageId,
-                author = "Mock Author ($sortBy)",
-                isPremium = index % 5 == 0,
-                categoryId = categoryId,
-                tags = listOf("mock", "tag", sortBy),
-                stats = Stats(downloads = 100 - index, favorites = 10, rating = 5),
-                uploadedAt = "2024-01-01T12:00:00+0000",
-                urls = WallpaperUrls(
-                    preview = representativeImageUrl.replace("_1920x1080.jpg", "_360x640.jpg"),
-                    display = representativeImageUrl.replace("_1920x1080.jpg", "_1080x1920.jpg"),
-                    full = representativeImageUrl.replace("_1920x1080.jpg", "_2160x3840.jpg")
-                )
-            )
+            val isPremium = index % 4 == 0 // Cứ 4 ảnh thì có 1 ảnh premium
+            createMockWallpaper(index, categoryId, sortBy, representativeImageUrl, isPremium)
+        }.filter {
+            // Lọc theo yêu cầu
+            (isPremiumRequest && it.isPremium) || (isFreeRequest && !it.isPremium)
         }
 
         val startIndex = offset
@@ -95,10 +96,60 @@ class WallpaperRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun searchWallpapers(query: String, offset: Int, limit: Int): Result<List<Wallpaper>> {
-        return getWallpapers(999, "search", offset, limit)
+    // Hàm tiện ích để tạo một Wallpaper giả
+    private fun createMockWallpaper(index: Int, categoryId: Int, sortBy: String, imageUrl: String, isPremium: Boolean): Wallpaper {
+        val imageId = categoryId * 1000 + index
+
+        // Tạo các phiên bản URL giả
+        val previewUrl = imageUrl.replace(Regex("_\\d+x\\d+\\.jpg$"), "_360x640.jpg")
+        val fhdUrl = imageUrl.replace(Regex("_\\d+x\\d+\\.jpg$"), "_1080x1920.jpg")
+        val uhdUrl = imageUrl.replace(Regex("_\\d+x\\d+\\.jpg$"), "_2160x3840.jpg")
+
+        return Wallpaper(
+            id = imageId,
+            author = "Mock Author ($sortBy)",
+            isPremium = isPremium,
+            price = if (isPremium) (index % 5) + 1 else 0, // Giá từ 1-5 coin
+            categoryId = categoryId,
+            tags = listOf("mock", "tag", sortBy),
+            stats = Stats(downloads = 500 - index, favorites = 50 - (index / 2), rating = 5),
+            uploadedAt = "2024-01-01T12:00:00+0000",
+            previewUrl = previewUrl,
+            versions = listOf(
+                ImageVersion(
+                    qualityLabel = "Full HD",
+                    resolutionLabel = "1080x1920",
+                    sizeLabel = "1.2 MB",
+                    url = fhdUrl,
+                    width = 1080,
+                    height = 1920
+                ),
+                ImageVersion(
+                    qualityLabel = "4K UHD",
+                    resolutionLabel = "2160x3840",
+                    sizeLabel = "3.5 MB",
+                    url = uhdUrl,
+                    width = 2160,
+                    height = 3840
+                )
+            ).distinctBy { it.url }
+        )
     }
 
+    override suspend fun searchWallpapers(
+        query: String,
+        types: List<String>,
+        offset: Int,
+        limit: Int
+    ): Result<List<Wallpaper>> {
+        // Trong môi trường mock, chúng ta có thể tái sử dụng logic của getWallpapers
+        // nhưng với một categoryId đặc biệt để phân biệt.
+        // Khi kết nối API thật, đây sẽ là một lệnh gọi đến apiService.searchWallpapers(...)
+
+        // Giả lập logic tìm kiếm bằng cách trả về kết quả tương tự như một category
+        val searchResultCategoryId = query.hashCode() // Dùng hash của query để tạo ID giả
+        return getWallpapers(searchResultCategoryId, "search", types, offset, limit)
+    }
     // CÁC HÀM FAVORITE
 
     override fun isFavorite(imageId: Int): Flow<Boolean> = favoriteDao.isFavorite(imageId)
@@ -108,7 +159,7 @@ class WallpaperRepositoryImpl @Inject constructor(
     override suspend fun addFavorite(wallpaper: Wallpaper) {
         val entity = FavoriteEntity(
             imageId = wallpaper.id,
-            previewUrl = wallpaper.urls.preview,
+            previewUrl = wallpaper.previewUrl,
             addedAt = System.currentTimeMillis()
         )
         favoriteDao.addFavorite(entity)

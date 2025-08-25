@@ -14,11 +14,13 @@ interface WallpaperRepository {
     suspend fun getWallpapers(
         categoryId: Int,
         sortBy: String,
+        types: List<String>, // <-- THÊM VÀO
         offset: Int,
         limit: Int
     ): Result<List<Wallpaper>>
     suspend fun searchWallpapers(
         query: String,
+        types: List<String>,
         offset: Int,
         limit: Int
     ): Result<List<Wallpaper>>

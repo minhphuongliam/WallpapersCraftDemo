@@ -5,6 +5,7 @@ data class WallpaperDTO(
     val id: Int,
     val author: String,
     val is_premium: Boolean,
+    val price_coins: Int, // <-- Thêm vào
     val tags: List<String>,
     val stats: StatsDTO,
     val uploaded_at: String,
